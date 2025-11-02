@@ -18,7 +18,9 @@ namespace MonkeyFinder
 
             builder.Services.AddSingleton<IMonkeyService, MonkeyService>();
             builder.Services.AddSingleton<IMonkeysViewModel, MonkeysViewModel>();
+            builder.Services.AddTransient<IMonkeyDetailsViewModel, MonkeyDetailsViewModel>();
             builder.Services.AddSingleton<View.MainPage>();
+            builder.Services.AddTransient<View.DetailsPage>();
 
 
 #if DEBUG

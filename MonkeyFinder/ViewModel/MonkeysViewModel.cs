@@ -16,6 +16,22 @@ namespace MonkeyFinder.ViewModel
         }
 
         [RelayCommand]
+        public async Task GoToDetailsAsync(Monkey monkey)
+        {
+            if (monkey is null)
+                return;
+
+
+            await Shell.Current.GoToAsync(
+                nameof(View.DetailsPage), 
+                true,
+                new Dictionary<string, object>
+                {
+                    {"Monkey", monkey }
+                });
+        }
+
+        [RelayCommand]
         public async Task GetMonkeysAsync()
         {
             if (IsBusy)
