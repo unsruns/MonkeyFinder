@@ -2,5 +2,6 @@
 {
     public interface IMonkeyDetailsViewModel
     {
+        Task OpenMapAsync();
     }
 }
